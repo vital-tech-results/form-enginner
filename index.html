@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- font awesome 5 free -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Poppins font from Google -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Your Custom CSS file that will include your blocks CSS -->
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>form.engineer</title>
+  </head>
+
+  <body>
+    <!------------------------------>
+    <!--Header and Nav---------------->
+    <!------------------------------>
+    <header class="hero container-fluid">
+      <div class="hero__content container mx-auto">
+        <!-- I'm putting the nav inside this "fixed-nav-container" to fix some issues happens on scroll -->
+        <div class="fixed-nav-container">
+          <nav class="hero-nav position-relative container mx-auto px-0">
+            <ul class="nav w-100 list-unstyled align-items-center p-0">
+              <li class="hero-nav__item">
+                <a href="/"
+                  ><img
+                    class="hero-nav__logo"
+                    src="./assets/logo.png"
+                    change-src-onscroll="./assets/logo.png"
+                    alt="our logo" /></a
+                ><!-- Don't remove this empty span --><span class="mx-2"></span>
+              </li>
+
+              <li
+                id="hero-menu"
+                class="
+                  flex-grow-1
+                  hero__nav-list hero__nav-list--mobile-menu
+                  ft-menu
+                "
+              >
+                <ul
+                  class="
+                    hero__menu-content
+                    nav
+                    flex-column flex-lg-row
+                    ft-menu__slider
+                    animated
+                    list-unstyled
+                    p-2 p-lg-0
+                  "
+                >
+                  <li class="flex-grow-1">
+                    <ul
+                      class="
+                        nav nav--lg-side
+                        flex-column-reverse flex-lg-row-reverse
+                        list-unstyled
+                        align-items-center
+                        p-0
+                      "
+                    >
+                      <li class="flex-grow-1">
+                        <ul
+                          class="
+                            nav nav--lg-side
+                            flex-column-reverse flex-lg-row-reverse
+                            list-unstyled
+                            align-items-center
+                            p-0
+                          "
+                        >
+                          <li class="hero-nav__item">
+                            <a href="#" target="_blank" class="btn btn-primary"
+                              >Try For Free</a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="hero-nav__item">
+                        <a href="#!" class="hero-nav__link">Contact</a>
+                      </li>
+                      <li class="hero-nav__item">
+                        <a href="#!" class="hero-nav__link">Pricing</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <button close-nav-menu="" class="ft-menu__close-btn animated">
+                  <svg
+                    class="bi bi-x"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                    <path
+                      fill-rule="evenodd"
+                      d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
+              </li>
+              <li class="hero-nav__item d-lg-none d-flex flex-row-reverse">
+                <button open-nav-menu="" class="text-center px-2">
+                  <i class="fas fa-bars"></i>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="hero__body">
+          <div class="row px-0 mx-0">
+            <div class="col-lg-6 px-0 mx-0">
+              <h1 class="hero__title mb-4">
+                Make beautiful forms with Drag-n-Drop interface
+                <span class="highlight">instantly</span>.
+              </h1>
+              <p class="hero__paragraph mb-5">No Coding Required</p>
+              <div class="col-lg-9 mx-0 p-0">
+                <a href="#" class="cta-input__btn">Get Started</a>
+              </div>
+            </div>
+            <div class="col-lg-6 mt-lg-0 px-0 mx-0">
+              <div class="hero__img-container">
+                <img
+                  src="https://images.unsplash.com/photo-1606166325683-e6deb697d301?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=763&q=80"
+                  class="hero__img w-100"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <script src="https://unpkg.com/tua-body-scroll-lock"></script>
+    <script>
+      var showDropdown = function (e) {
+          e.currentTarget.classList.add("hero-nav__item--show-dropdown");
+        },
+        hideDropdown = function (e) {
+          e.currentTarget.classList.remove("hero-nav__item--show-dropdown");
+        },
+        toggleDropdown = function (e) {
+          e.currentTarget.classList.toggle("hero-nav__item--show-dropdown");
+        };
+
+      var heroMenu = document.querySelector("#hero-menu");
+
+      function closeMenuAndGoTo(o) {
+        document
+          .querySelector("#hero-menu")
+          .classList.toggle("ft-menu--js-show");
+        var e = document.querySelector("#hero-menu");
+        if (
+          ((e.style.height = ""),
+          bodyScrollLock.unlock(e),
+          "#" === o || !document.querySelector(o))
+        )
+          return !1;
+        setTimeout(function () {
+          var e = document.querySelector(o);
+          window.scrollTo({
+            top: e.getBoundingClientRect().top,
+            behavior: "smooth",
+          });
+        }, 250);
+      }
+      (document.querySelector("[close-nav-menu]").onclick = function (e) {
+        heroMenu.classList.toggle("ft-menu--js-show"),
+          bodyScrollLock.unlock(heroMenu);
+      }),
+        (document.querySelector("[open-nav-menu]").onclick = function (e) {
+          heroMenu.classList.toggle("ft-menu--js-show"),
+            (heroMenu.style.height = window.innerHeight + "px"),
+            bodyScrollLock.lock(heroMenu);
+        }),
+        document
+          .querySelector("#hero-menu")
+          .querySelectorAll("[href*='#']")
+          .forEach(function (o) {
+            o.onclick = function (e) {
+              e.preventDefault(), closeMenuAndGoTo(o.getAttribute("href"));
+            };
+          });
+      var nav = document.querySelector(".hero-nav");
+      window.onscroll = function (e) {
+        var o = document.querySelector("[change-src-onscroll]");
+        window.scrollY > nav.getBoundingClientRect().height
+          ? (nav.classList.contains("hero-nav--is-sticky") ||
+              ((window.logoSrc = o.getAttribute("src")),
+              o.setAttribute("src", o.getAttribute("change-src-onscroll")),
+              o.setAttribute("change-src-onscroll", logoSrc)),
+            nav.classList.add("hero-nav--is-sticky"))
+          : 0 === window.scrollY &&
+            (nav.classList.contains("hero-nav--is-sticky") &&
+              ((window.logoSrc = o.getAttribute("src")),
+              o.setAttribute("src", o.getAttribute("change-src-onscroll")),
+              o.setAttribute("change-src-onscroll", logoSrc)),
+            nav.classList.remove("hero-nav--is-sticky"));
+      };
+    </script>
+
+    <!------------------------------>
+    <!--Steps---------------->
+    <!------------------------------>
+    <div class="steps-block space-between-blocks">
+      <div class="container">
+        <!-- HEADER -->
+        <div class="col-lg-8 col-xl-7 mx-auto text-center mb-5">
+          <h1 class="block__title mb-3">
+            3 Simple Steps to get started making Forms
+          </h1>
+        </div>
+        <div class="row px-2 align-items-start justify-content-center">
+          <div class="the-step col-md-6 col-lg-4">
+            <div class="the-step__symbol-container">
+              <span class="the-step__symbol">01</span>
+            </div>
+            <div class="the-step__content">
+              <h4 class="the-step__title">Enter form details</h4>
+              <p class="the-step__paragraph">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry’s standard.
+              </p>
+            </div>
+            <svg
+              class="the-step__arrow"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              ></path>
+            </svg>
+          </div>
+          <div class="the-step col-md-6 col-lg-4">
+            <div class="the-step__symbol-container">
+              <span class="the-step__symbol">02</span>
+            </div>
+            <div class="the-step__content">
+              <h4 class="the-step__title">Drag-n-Drop Form fields</h4>
+              <p class="the-step__paragraph">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry’s standard.
+              </p>
+            </div>
+            <svg
+              class="the-step__arrow"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              ></path>
+            </svg>
+          </div>
+          <div class="the-step col-md-6 col-lg-4">
+            <div class="the-step__symbol-container">
+              <span class="the-step__symbol">03</span>
+            </div>
+            <div class="the-step__content">
+              <h4 class="the-step__title">Save & Share</h4>
+              <p class="the-step__paragraph">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry’s standard.
+              </p>
+            </div>
+            <svg
+              class="the-step__arrow"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!------------------------------>
+    <!--Features---------------->
+    <!------------------------------>
+    <div class="features-block space-between-blocks">
+      <div class="container">
+        <div class="col-lg-8 col-xl-7 mx-auto text-center mb-5">
+          <h1 class="block__title mb-3">
+            All the features you expect, and more.
+          </h1>
+        </div>
+        <div class="row px-2">
+          <div class="col-lg-6">
+            <div class="feature">
+              <div>
+                <span class="fr-icon fr-icon--large mx-auto"
+                  ><svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="bi bi-hourglass-split"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0c0 .701.478 1.236 1.011 1.492A3.5 3.5 0 0 1 11.5 13s-.866-1.299-3-1.48V8.35z"
+                    ></path></svg
+                ></span>
+              </div>
+              <div class="feature__content">
+                <h4 class="feature__title">Modern, intuitive design</h4>
+                <p class="feature__paragraph">
+                  We have high expectations for the software we use, and we know
+                  you do too. Our modern, intuitive design feels like a delight,
+                  not a drag.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="feature">
+              <div>
+                <span class="fr-icon fr-icon--large mx-auto"
+                  ><svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="bi bi-bezier"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm10.5.5A1.5 1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5v-1zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"
+                    ></path>
+                    <path
+                      d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5v-1zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z"
+                    ></path></svg
+                ></span>
+              </div>
+              <div class="feature__content">
+                <h4 class="feature__title">Use Form anywhere</h4>
+                <p class="feature__paragraph">
+                  Directly share the form link or embed forms in your website,
+                  no framework dependency. Use the way you like.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="feature">
+              <div>
+                <span class="fr-icon fr-icon--large mx-auto"
+                  ><svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="bi bi-gem"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6l3-4zm11.386 3.785l-1.806-2.41-.776 2.413 2.582-.003zm-3.633.004l.961-2.989H4.186l.963 2.995 5.704-.006zM5.47 5.495l5.062-.005L8 13.366 5.47 5.495zm-1.371-.999l-.78-2.422-1.818 2.425 2.598-.003zM1.499 5.5l2.92-.003 2.193 6.82L1.5 5.5zm7.889 6.817l2.194-6.828 2.929-.003-5.123 6.831z"
+                    ></path></svg
+                ></span>
+              </div>
+              <div class="feature__content">
+                <h4 class="feature__title">All HTML5 form fields</h4>
+                <p class="feature__paragraph">
+                  A complete set of HTML5 form fields to add any type of fields
+                  in your website
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="feature">
+              <div>
+                <span class="fr-icon fr-icon--large mx-auto"
+                  ><svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="bi bi-gem"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6l3-4zm11.386 3.785l-1.806-2.41-.776 2.413 2.582-.003zm-3.633.004l.961-2.989H4.186l.963 2.995 5.704-.006zM5.47 5.495l5.062-.005L8 13.366 5.47 5.495zm-1.371-.999l-.78-2.422-1.818 2.425 2.598-.003zM1.499 5.5l2.92-.003 2.193 6.82L1.5 5.5zm7.889 6.817l2.194-6.828 2.929-.003-5.123 6.831z"
+                    ></path></svg
+                ></span>
+              </div>
+              <div class="feature__content">
+                <h4 class="feature__title">Integrated with mailchimp</h4>
+                <p class="feature__paragraph">
+                  Integrate your form with mailchimp, directly get all users
+                  information in your mailchimp account
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="feature">
+              <div>
+                <span class="fr-icon fr-icon--large mx-auto"
+                  ><svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="bi bi-box-seam"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"
+                    ></path></svg
+                ></span>
+              </div>
+              <div class="feature__content">
+                <h4 class="feature__title">Advance Form fields</h4>
+                <p class="feature__paragraph">
+                  Not just HTML fields, but many more advance field like
+                  Calendar, Signature, File upload and more.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="feature">
+              <div>
+                <span class="fr-icon fr-icon--large mx-auto"
+                  ><svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="bi bi-bar-chart-line"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"
+                    ></path></svg
+                ></span>
+              </div>
+              <div class="feature__content">
+                <h4 class="feature__title">Analytics & insights</h4>
+                <p class="feature__paragraph">
+                  Analyse your users submitted data with intuitive pie chart.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="feature">
+              <div>
+                <span class="fr-icon fr-icon--large mx-auto"
+                  ><svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="bi bi-bar-chart-line"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"
+                    ></path></svg
+                ></span>
+              </div>
+              <div class="feature__content">
+                <h4 class="feature__title">Multiple theme selection options</h4>
+                <p class="feature__paragraph">
+                  With over 10+ themes, give a look to your form the way you
+                  like
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="feature">
+              <div>
+                <span class="fr-icon fr-icon--large mx-auto"
+                  ><svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="bi bi-bar-chart-line"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"
+                    ></path></svg
+                ></span>
+              </div>
+              <div class="feature__content">
+                <h4 class="feature__title">Conditional Fields</h4>
+                <p class="feature__paragraph">
+                  With conditional fields you can show or hide an fields based
+                  on users input
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!------------------------------>
+    <!--Features---------------->
+    <!------------------------------>
+    <div class="block-61 space-between-blocks">
+      <div class="container">
+        <div class="block__header col-lg-8 col-xl-7 mx-auto text-center px-0">
+          <p class="block__paragraph">
+            Loved by more than 300 customer like you
+          </p>
+          <h1 class="block__title">What They Say About Us</h1>
+        </div>
+        <div class="row px-2 pt-4">
+          <div class="col-lg-6 pb-5">
+            <div class="testimonial-card-1">
+              <p class="testimonial-card-1__paragraph">
+                I love this form generator and have used it to create several of
+                my forms. It is so simple to use and does not require advanced
+                coding knowledge. I love the fact that it is available on the
+                web and is mobile-friendly. I also love that I can create a form
+                in minutes and send it to my visitors.
+              </p>
+              <div class="block-61-person">
+                <div>
+                  <img
+                    class="block-61-person__avatar"
+                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                  />
+                </div>
+                <div class="px-2"></div>
+                <div class="flex-grow-1 d-flex flex-column">
+                  <span class="block-61-person__rating"
+                    ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                    ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                    ><i class="fas fa-star"></i></span
+                  ><span class="block-61-person__name my-1">Charles</span
+                  ><span class="block-61-person__info">####.com</span>
+                </div>
+              </div>
+              <span class="testimonial-card-1__quote-symbol"
+                ><i class="fas fa-quote-left"></i
+              ></span>
+            </div>
+          </div>
+          <div class="col-lg-6 pb-5">
+            <div class="testimonial-card-1">
+              <p class="testimonial-card-1__paragraph">
+                This is an easy to use form generator that allows me to create
+                forms for my website in a matter of seconds. The interface is
+                easy to use and the tool is affordable. I have been able to
+                create and send out forms to visitors quickly and easily.
+              </p>
+              <div class="block-61-person">
+                <div>
+                  <img
+                    class="block-61-person__avatar"
+                    src="https://randomuser.me/api/portraits/men/43.jpg"
+                  />
+                </div>
+                <div class="px-2"></div>
+                <div class="flex-grow-1 d-flex flex-column">
+                  <span class="block-61-person__rating"
+                    ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                    ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                    ><i class="fas fa-star"></i></span
+                  ><span class="block-61-person__name my-1">Mike David</span
+                  ><span class="block-61-person__info">####.com</span>
+                </div>
+              </div>
+              <span class="testimonial-card-1__quote-symbol"
+                ><i class="fas fa-quote-left"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!------------------------------>
+    <!--Section Name---------------->
+    <!------------------------------>
+    <div
+      class="
+        block-29
+        my-lg-5
+        px-4
+        container
+        space-between-blocks
+        overflow-hidden
+      "
+    >
+      <div class="row justify-content-center px-lg-5">
+        <div class="col-lg-6 col-xl-7 mb-3 mb-lg-0">
+          <h4 class="block-29__title m-0">Create Beautiful Forms easily.</h4>
+          <p class="block-29__paragraph mt-3">
+            A form builder where you can easily build forms using any of the
+            basic or advanced fields./p>
+          </p>
+        </div>
+
+        <div
+          class="
+            col-lg-6 col-xl-5
+            mt-4 mt-xl-0
+            d-flex
+            flex-row-reverse
+            align-items-center
+            justify-content-center justify-content-lg-start
+          "
+        >
+          <div class="w-100 text-center">
+            <a href="#" class="cta-input__btn">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function submitForm(t) {
+        t.preventDefault();
+        var n = t.target.querySelector("button");
+        if (n.classList.contains("btn--loading")) return !1;
+        n.classList.add("btn--loading");
+        try {
+          setTimeout(function () {
+            n.classList.remove("btn--loading");
+          }, 2e3);
+        } catch (t) {
+          console.log(t), n.classList.remove("btn--loading");
+        }
+      }
+    </script>
+
+    <!------------------------------>
+    <!--Footer---------------->
+    <!------------------------------>
+    <div class="block-43 text-center py-5">
+      <div class="container">
+        <ul class="block-43__list list-unstyled justify-content-center mb-4">
+          <li class="block-43__li-1">
+            <a href="#!" class="block-43__link">Affiliate</a>
+          </li>
+          <li class="block-43__li-1">
+            <a href="#!" class="block-43__link">Entreprise</a>
+          </li>
+          <li class="block-43__li-1">
+            <a href="#!" class="block-43__link">Products</a>
+          </li>
+          <li class="block-43__li-1">
+            <a href="#!" class="block-43__link">Account</a>
+          </li>
+        </ul>
+        <ul class="d-flex justify-content-center list-unstyled p-0">
+          <li class="mx-2">
+            <a href="#!" class="block-43__link m-0"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </li>
+          <li class="mx-2">
+            <a href="#!" class="block-43__link m-0"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li class="mx-2">
+            <a href="#!" class="block-43__link m-0"
+              ><i class="fas fa-envelope"></i
+            ></a>
+          </li>
+        </ul>
+        <p class="block-43__copyrights">© 2021 form.engineer.</p>
+      </div>
+    </div>
+  </body>
+</html>
